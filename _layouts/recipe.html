@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="recipe">
+  <h1>{{ page.title }}</h1>
+  <p class="meta">
+    {% if page.servings %}<span>Serves {{ page.servings }}</span>{% endif %}
+    {% if page.prep_minutes %}<span>Prep {{ page.prep_minutes }} min</span>{% endif %}
+    {% if page.cook_minutes %}<span>Cook {{ page.cook_minutes }} min</span>{% endif %}
+    {% if page.rating %}<span>{% for i in (1..page.rating) %}★{% endfor %}</span>{% endif %}
+  </p>
+  {% if page.tags %}
+  <p class="tags">{% for t in page.tags %}<a class="tag" href="{{ '/' | relative_url }}?tag={{ t | uri_escape }}">{{ t }}</a>{% endfor %}</p>
+  {% endif %}
+  {% if page.image %}<img class="hero" src="{{ page.image }}" alt="{{ page.title }}">{% endif %}
+
+  {{ content }}
+
+  <footer class="source">
+    {% if page.source_url %}<p>Source: <a href="{{ page.source_url }}">{{ page.source_name | default: page.source_url }}</a>{% if page.source_type %} ({{ page.source_type }}){% endif %}</p>
+    {% elsif page.source_name %}<p>Source: {{ page.source_name }}{% if page.source_type %} ({{ page.source_type }}){% endif %}</p>{% endif %}
+    {% if page.originals %}<p>Originals: {% for o in page.originals %}<a href="{{ o }}">{{ o }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
+    {% if page.cooked %}<p>Cooked: {{ page.cooked | join: ", " }}</p>{% endif %}
+  </footer>
+</article>

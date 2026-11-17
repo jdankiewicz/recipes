@@ -1,0 +1,35 @@
+:root {
+  --bg: #fbfaf7; --fg: #1f1d1a; --muted: #6b665e; --line: #e4e0d8;
+  --accent: #b5532a; --chip: #f0ece4; --chip-on: #b5532a; --chip-on-fg: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #171614; --fg: #ece8e1; --muted: #a29c92; --line: #34312c;
+          --accent: #e08a5f; --chip: #2a2824; --chip-on: #e08a5f; --chip-on-fg: #171614; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+main, .site-header { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+.site-header { padding-top: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; font-size: 20px; color: var(--fg); text-decoration: none; }
+a { color: var(--accent); }
+.search { position: sticky; top: 0; background: var(--bg); padding: 16px 0 8px; z-index: 1; }
+#q { width: 100%; font-size: 17px; padding: 12px 14px; border: 1px solid var(--line);
+  border-radius: 10px; background: var(--bg); color: var(--fg); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; padding: 0; }
+.tag { border: 0; background: var(--chip); color: var(--fg); padding: 4px 10px;
+  border-radius: 999px; font-size: 14px; text-decoration: none; cursor: pointer; font-family: inherit; }
+.tag[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-fg); }
+.count { color: var(--muted); font-size: 14px; margin: 8px 0; }
+.results { list-style: none; padding: 0; margin: 0; }
+.results li { border-bottom: 1px solid var(--line); }
+.results a.card { display: flex; gap: 12px; align-items: center; padding: 12px 0; color: var(--fg); text-decoration: none; }
+.results img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; flex: none; }
+.results .t { font-weight: 600; }
+.results .s { color: var(--muted); font-size: 14px; }
+.recipe h1 { margin: 20px 0 4px; line-height: 1.2; }
+.meta { color: var(--muted); display: flex; flex-wrap: wrap; gap: 14px; margin: 0; }
+.hero { width: 100%; border-radius: 12px; margin: 12px 0; }
+.recipe img { max-width: 100%; height: auto; }
+.recipe li { margin: 2px 0; }
+.source { border-top: 1px solid var(--line); margin: 32px 0; padding-top: 8px; color: var(--muted); font-size: 14px; word-break: break-word; }

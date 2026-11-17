@@ -1,0 +1,16 @@
+title: Recipes
+description: Things I have actually cooked.
+markdown: kramdown
+# Recipe pages live in recipes/<slug>/index.md, with their photos beside them.
+defaults:
+  - scope:
+      path: "recipes"
+    values:
+      layout: recipe
+exclude:
+  - README.md
+  - CLAUDE.md
+  - templates
+  - Gemfile
+  - Gemfile.lock
+  - vendor

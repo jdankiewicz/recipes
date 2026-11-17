@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<section class="search">
+  <input id="q" type="search" placeholder="Search recipes, ingredients, notes…" autocomplete="off" aria-label="Search recipes">
+  <div id="tags" class="tags" aria-label="Filter by tag"></div>
+</section>
+<p id="count" class="count"></p>
+<ul id="results" class="results"></ul>
+<noscript>
+  <ul class="results">
+  {% assign recipes = site.pages | where: "layout", "recipe" | sort: "title" %}
+  {% for r in recipes %}<li><a href="{{ r.url | relative_url }}">{{ r.title }}</a></li>{% endfor %}
+  </ul>
+</noscript>
+<script>window.SEARCH_INDEX_URL = "{{ '/search.json' | relative_url }}";</script>
+<script src="{{ '/assets/search.js' | relative_url }}"></script>
