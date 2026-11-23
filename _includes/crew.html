@@ -1,0 +1,13 @@
+{%- comment -%}
+  Round screen-printed family photo in the header. `pick` chooses one; otherwise it matches the recipe's tags.
+{%- endcomment -%}
+{%- assign crew = include.pick -%}
+{%- unless crew -%}
+  {%- assign t = include.tags | join: " " | prepend: " " | append: " " -%}
+  {%- if t contains " baking " or t contains " dessert " or t contains " cake " or t contains " bread " -%}{%- assign crew = "buns" -%}
+  {%- elsif t contains " sandwich " or t contains " burger " or t contains " lunch " -%}{%- assign crew = "burger" -%}
+  {%- elsif t contains " pasta " or t contains " italian " or t contains " noodles " -%}{%- assign crew = "spaghetti" -%}
+  {%- elsif t contains " vegetarian " or t contains " vegan " or t contains " side " -%}{%- assign crew = "shades" -%}
+  {%- else -%}{%- assign crew = "spaghetti" -%}{%- endif -%}
+{%- endunless -%}
+<img class="crew" id="crew" src="{{ '/assets/crew/' | append: crew | append: '.png' | relative_url }}" alt="" width="180" height="180">

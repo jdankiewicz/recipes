@@ -96,3 +96,18 @@ a { color: var(--link); }
 .chip span { margin-left: 4px; opacity: .85; }
 .clear { font: 14px var(--text); background: none; border: 0; color: var(--link); text-decoration: underline; cursor: pointer; padding: 6px 4px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Family photos, screen-printed in the site's inks, as a round badge in the header */
+.with-crew .band-inner { position: relative; }
+.with-crew h1, .with-crew .tagline, .with-crew .back { padding-right: 104px; }
+.crew { position: absolute; right: max(12px, env(safe-area-inset-right)); top: 14px; width: 92px; height: 92px; border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--cream), 0 0 0 6px var(--brown); z-index: 1; background: var(--mustard); }
+.with-crew.home .tagline { margin-bottom: 26px; }
+.band.with-crew:not(.home) .band-inner { min-height: 124px; }
+@media (min-width: 600px) {
+  .with-crew .band-inner { padding-right: 200px; }
+  .with-crew h1, .with-crew .tagline, .with-crew .back { padding-right: 0; }
+  .with-crew.home .tagline { margin-bottom: 14px; }
+  .crew { top: auto; bottom: -44px; width: 160px; height: 160px; }
+  .with-crew + .stripes + .page { padding-top: 40px; }
+}

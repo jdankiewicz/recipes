@@ -1,8 +1,16 @@
 ---
 layout: default
 ---
-<header class="band home">
+<header class="band home with-crew">
   <div class="band-inner">
+    {% include crew.html pick="burger" %}
+    <script>
+      // A different family photo on each visit (the burger is the default without JavaScript).
+      (function () {
+        var c = ["buns", "burger", "spaghetti", "shades"], img = document.getElementById("crew");
+        img.src = img.src.replace(/[a-z]+\.png$/, c[Math.floor(Math.random() * c.length)] + ".png");
+      })();
+    </script>
     <h1 class="display brand">{{ site.title }}</h1>
     <p class="tagline">{{ site.description }}</p>
     <input id="q" type="search" placeholder="What's cooking? Search dishes, ingredients, notes" autocomplete="off" aria-label="Search recipes">
