@@ -6,7 +6,7 @@ prep_minutes: 10
 cook_minutes: 20
 source_type: own
 source_name: Josef
-cooked: []
+cooked: [2026-11-16]
 ---
 
 A Sichuan-inspired stir-fry with crispy Anamma veggie mince, blistered green beans, garlic, ginger and a savoury, slightly sweet mushroom-soy sauce. Mildly spicy; serve with jasmine rice.
@@ -53,3 +53,5 @@ Serve as a Chinese family-style meal with:
 - **Jasmine rice:** plain, to balance the stronger flavours.
 
 ## My notes
+
+- 2026-11-16: Cooked sometime in the week of 16 Nov 2026 (exact day not recorded). Served family-style with tomato and egg, smashed cucumber, garlic bok choy and jasmine rice.
