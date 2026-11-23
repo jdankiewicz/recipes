@@ -4,13 +4,15 @@ layout: null
 {% assign recipes = site.pages | where: "layout", "recipe" | sort: "title" -%}
 [
 {%- for r in recipes %}
+  {%- include photos.html dir=r.dir originals=r.originals -%}
+  {%- assign img = r.image -%}
+  {%- if img == nil and photos.size > 0 -%}{%- assign img = photos.first.name -%}{%- endif %}
   {
     "title": {{ r.title | jsonify }},
     "url": {{ r.url | relative_url | jsonify }},
-    "tags": {{ r.tags | default: empty | jsonify }},
-    "image": {% if r.image %}{{ r.image | prepend: r.url | relative_url | jsonify }}{% else %}null{% endif %},
-    "cooked": {{ r.cooked | default: empty | jsonify }},
-    "rating": {{ r.rating | default: 0 }},
+    "tags": {% if r.tags %}{{ r.tags | jsonify }}{% else %}[]{% endif %},
+    "image": {% if img %}{{ img | prepend: r.url | relative_url | jsonify }}{% else %}null{% endif %},
+    "cooked": {{ r.cooked.size | default: 0 }},
     "text": {{ r.content | strip_html | normalize_whitespace | jsonify }}
   }{% unless forloop.last %},{% endunless %}
 {%- endfor %}

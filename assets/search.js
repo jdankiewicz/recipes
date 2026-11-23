@@ -21,7 +21,7 @@
     var all = {};
     recipes.forEach(function (r) { (r.tags || []).forEach(function (t) { all[t] = (all[t] || 0) + 1; }); });
     tagsEl.innerHTML = Object.keys(all).sort().map(function (t) {
-      return '<button type="button" class="tag" data-tag="' + esc(t) + '" aria-pressed="' + active.has(t) + '">' +
+      return '<button type="button" class="pill" data-tag="' + esc(t) + '" aria-pressed="' + active.has(t) + '">' +
         esc(t) + " · " + all[t] + "</button>";
     }).join("");
   }
@@ -35,10 +35,10 @@
     count.textContent = hits.length + " of " + recipes.length + " recipes";
     results.innerHTML = hits.map(function (r) {
       var sub = (r.tags || []).join(" · ");
-      if (r.cooked && r.cooked.length) sub += (sub ? " — " : "") + "cooked " + r.cooked.length + "×";
+      if (r.cooked) sub += (sub ? " · " : "") + "cooked " + r.cooked + "×";
       return '<li><a class="card" href="' + esc(r.url) + '">' +
-        (r.image ? '<img loading="lazy" src="' + esc(r.image) + '" alt="">' : "") +
-        '<span><span class="t">' + esc(r.title) + '</span><br><span class="s">' + esc(sub) + "</span></span></a></li>";
+        (r.image ? '<img loading="lazy" src="' + esc(r.image) + '" alt="">' : '<span class="sun" aria-hidden="true"></span>') +
+        '<span><span class="t">' + esc(r.title) + '</span><span class="s">' + esc(sub) + "</span></span></a></li>";
     }).join("");
     var p = new URLSearchParams();
     if (q.value) p.set("q", q.value);

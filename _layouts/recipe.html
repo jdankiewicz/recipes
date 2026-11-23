@@ -1,25 +1,54 @@
 ---
 layout: default
 ---
-<article class="recipe">
-  <h1>{{ page.title }}</h1>
-  <p class="meta">
-    {% if page.servings %}<span>Serves {{ page.servings }}</span>{% endif %}
-    {% if page.prep_minutes %}<span>Prep {{ page.prep_minutes }} min</span>{% endif %}
-    {% if page.cook_minutes %}<span>Cook {{ page.cook_minutes }} min</span>{% endif %}
-    {% if page.rating %}<span>{% for i in (1..page.rating) %}★{% endfor %}</span>{% endif %}
-  </p>
-  {% if page.tags %}
-  <p class="tags">{% for t in page.tags %}<a class="tag" href="{{ '/' | relative_url }}?tag={{ t | uri_escape }}">{{ t }}</a>{% endfor %}</p>
-  {% endif %}
-  {% if page.image %}<img class="hero" src="{{ page.image }}" alt="{{ page.title }}">{% endif %}
+{%- include photos.html dir=page.dir originals=page.originals -%}
+{%- assign hero = page.image -%}
+{%- if hero == nil and photos.size > 0 -%}{%- assign hero = photos.first.name -%}{%- endif -%}
+<header class="band">
+  <div class="band-inner">
+    <a class="back" href="{{ '/' | relative_url }}">← {{ site.title }}</a>
+    <h1 class="display">{{ page.title }}</h1>
+  </div>
+</header>
+<div class="stripes" aria-hidden="true"></div>
 
-  {{ content }}
+<main class="page">
+  {%- if page.prep_minutes or page.cook_minutes or page.servings %}
+  <div class="facts">
+    {% if page.prep_minutes %}<div><b>{{ page.prep_minutes }}</b>min prep</div>{% endif %}
+    {% if page.cook_minutes %}<div><b>{{ page.cook_minutes }}</b>min cook</div>{% endif %}
+    {% if page.servings %}<div><b>{{ page.servings }}</b>serves</div>{% endif %}
+    {% if page.cooked.size > 0 %}<div><b>{{ page.cooked.size }}×</b>cooked</div>{% endif %}
+  </div>
+  {%- endif %}
+  {% if page.tags %}
+  <p class="pills">{% for t in page.tags %}<a class="pill" href="{{ '/' | relative_url }}?tag={{ t | uri_escape }}">{{ t }}</a>{% endfor %}</p>
+  {% endif %}
+
+  {% if hero %}<img class="hero" src="{{ hero }}" alt="{{ page.title }}">{% endif %}
+
+  <article class="recipe">
+    {{ content }}
+  </article>
+
+  <section class="photos" aria-labelledby="photos-h">
+    <h2 id="photos-h">Photos</h2>
+    {% if photos.size > 0 %}
+    <div class="gallery">
+      {% for p in photos %}<a href="{{ p.name }}"><img loading="lazy" src="{{ p.name }}" alt="{{ page.title }} photo {{ forloop.index }}"></a>{% endfor %}
+    </div>
+    {% else %}
+    <p class="muted">No photos yet.</p>
+    {% endif %}
+    {%- assign folder = page.dir | remove_first: "/" -%}
+    <a class="button" href="https://github.com/{{ site.repository }}/upload/{{ site.branch }}/{{ folder }}">Add photos</a>
+    <p class="muted small">Opens GitHub, signed in as you. Pick photos from your phone or computer, then press "Commit changes". They show up here in about a minute.</p>
+  </section>
 
   <footer class="source">
     {% if page.source_url %}<p>Source: <a href="{{ page.source_url }}">{{ page.source_name | default: page.source_url }}</a>{% if page.source_type %} ({{ page.source_type }}){% endif %}</p>
     {% elsif page.source_name %}<p>Source: {{ page.source_name }}{% if page.source_type %} ({{ page.source_type }}){% endif %}</p>{% endif %}
     {% if page.originals %}<p>Originals: {% for o in page.originals %}<a href="{{ o }}">{{ o }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
-    {% if page.cooked %}<p>Cooked: {{ page.cooked | join: ", " }}</p>{% endif %}
+    {% if page.cooked.size > 0 %}<p>Cooked: {% for d in page.cooked %}{{ d | date: "%-d %b %Y" }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
   </footer>
-</article>
+</main>

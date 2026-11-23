@@ -1,35 +1,85 @@
+/* 1970s cookbook look for the frame (header, search, tags, list).
+   Recipe text itself stays plain, high-contrast and easy to follow while cooking. */
 :root {
-  --bg: #fbfaf7; --fg: #1f1d1a; --muted: #6b665e; --line: #e4e0d8;
-  --accent: #b5532a; --chip: #f0ece4; --chip-on: #b5532a; --chip-on-fg: #fff;
+  --orange: #d9551f; --mustard: #f0a21c; --brown: #8c3b17; --avocado: #2f6b4f;
+  --cream: #fff3d9; --sand: #f7e3bf;
+  --bg: #f7e3bf;           /* page ground */
+  --paper: #fffdf8;        /* recipe text background */
+  --ink: #1d1a17;          /* recipe text */
+  --muted: #6e5a48;
+  --line: #e6d6bd;
+  --link: #b1400f;
+  --display: "Shrikhand", "Cooper Black", Georgia, serif;
+  --text: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #171614; --fg: #ece8e1; --muted: #a29c92; --line: #34312c;
-          --accent: #e08a5f; --chip: #2a2824; --chip-on: #e08a5f; --chip-on-fg: #171614; }
+  :root { --bg: #2a1a10; --paper: #1c1714; --ink: #f1ebe3; --muted: #bba68f; --line: #3d2f25;
+          --cream: #3a2618; --sand: #2a1a10; --link: #f3a066; color-scheme: dark; }
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg);
-  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-main, .site-header { max-width: 720px; margin: 0 auto; padding: 0 16px; }
-.site-header { padding-top: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
-.brand { font-weight: 700; font-size: 20px; color: var(--fg); text-decoration: none; }
-a { color: var(--accent); }
-.search { position: sticky; top: 0; background: var(--bg); padding: 16px 0 8px; z-index: 1; }
-#q { width: 100%; font-size: 17px; padding: 12px 14px; border: 1px solid var(--line);
-  border-radius: 10px; background: var(--bg); color: var(--fg); }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; padding: 0; }
-.tag { border: 0; background: var(--chip); color: var(--fg); padding: 4px 10px;
-  border-radius: 999px; font-size: 14px; text-decoration: none; cursor: pointer; font-family: inherit; }
-.tag[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-fg); }
-.count { color: var(--muted); font-size: 14px; margin: 8px 0; }
-.results { list-style: none; padding: 0; margin: 0; }
-.results li { border-bottom: 1px solid var(--line); }
-.results a.card { display: flex; gap: 12px; align-items: center; padding: 12px 0; color: var(--fg); text-decoration: none; }
-.results img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; flex: none; }
-.results .t { font-weight: 600; }
-.results .s { color: var(--muted); font-size: 14px; }
-.recipe h1 { margin: 20px 0 4px; line-height: 1.2; }
-.meta { color: var(--muted); display: flex; flex-wrap: wrap; gap: 14px; margin: 0; }
-.hero { width: 100%; border-radius: 12px; margin: 12px 0; }
-.recipe img { max-width: 100%; height: auto; }
-.recipe li { margin: 2px 0; }
-.source { border-top: 1px solid var(--line); margin: 32px 0; padding-top: 8px; color: var(--muted); font-size: 14px; word-break: break-word; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--text); }
+a { color: var(--link); }
+.display { font-family: var(--display); font-weight: 400; }
+
+/* Header band with sunset stripes */
+.band { background: var(--orange); color: #fff3d9; }
+.band-inner { max-width: 720px; margin: 0 auto; padding: 22px max(16px, env(safe-area-inset-right)) 22px max(16px, env(safe-area-inset-left)); }
+.band h1 { margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.05; text-shadow: 3px 3px 0 var(--brown); text-wrap: balance; }
+.band .tagline { margin: 4px 0 14px; font-style: italic; color: #ffe2b5; }
+.band .back { color: #ffe2b5; text-decoration: none; font-size: 15px; display: inline-block; margin-bottom: 6px; }
+.stripes { height: 24px; background: linear-gradient(var(--mustard) 0 8px, var(--orange) 8px 12px, var(--brown) 12px 20px, transparent 20px); }
+#q { width: 100%; font: 17px var(--text); padding: 12px 16px; border: 0; border-radius: 16px; background: #fff3d9; color: #1d1a17; }
+#q::placeholder { color: #9b6a45; }
+#q:focus { outline: 3px solid var(--mustard); }
+
+.page { max-width: 720px; margin: 0 auto; padding: 12px max(16px, env(safe-area-inset-right)) 48px max(16px, env(safe-area-inset-left)); }
+
+/* Tag pills */
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; padding: 0; }
+.pill { font: 700 14px var(--text); padding: 5px 13px; border-radius: 999px; background: var(--cream); border: 2px solid var(--brown);
+  color: var(--brown); text-decoration: none; cursor: pointer; }
+@media (prefers-color-scheme: dark) { .pill { color: #f0c79a; border-color: #b0603a; } }
+.pill[aria-pressed="true"] { background: var(--avocado); border-color: var(--avocado); color: #fff3d9; }
+.count { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+
+/* Recipe list */
+.results { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.card { display: flex; gap: 14px; align-items: center; padding: 10px 14px; background: var(--cream); border: 2px solid var(--brown);
+  border-radius: 18px; color: var(--ink); text-decoration: none; }
+.card:hover, .card:focus-visible { background: #ffe9c2; }
+@media (prefers-color-scheme: dark) { .card:hover, .card:focus-visible { background: #4a3020; } .card { border-color: #6b3a1e; } }
+.card img, .card .sun { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: none; }
+.card .sun { background: radial-gradient(circle, var(--mustard) 0 38%, var(--orange) 39% 58%, var(--brown) 59% 70%, transparent 71%); }
+.results li:nth-child(3n+2) .sun { background: radial-gradient(circle, var(--avocado) 0 38%, var(--mustard) 39% 58%, var(--orange) 59% 70%, transparent 71%); }
+.results li:nth-child(3n) .sun { background: radial-gradient(circle, var(--orange) 0 38%, #fff3d9 39% 50%, var(--avocado) 51% 70%, transparent 71%); }
+.card .t { font-family: var(--display); font-size: 20px; line-height: 1.15; color: var(--brown); display: block; }
+@media (prefers-color-scheme: dark) { .card .t { color: #f3a066; } }
+.card .s { color: var(--muted); font-size: 14px; }
+
+/* Recipe page: facts tiles in the 70s style, then plain text */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 8px; margin: 4px 0 8px; text-align: center; }
+.facts div { background: var(--cream); border: 2px solid var(--brown); border-radius: 16px; padding: 6px 4px;
+  font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.facts b { display: block; font-family: var(--display); font-weight: 400; font-size: 24px; letter-spacing: 0; text-transform: none; color: var(--orange); line-height: 1.2; }
+.hero { display: block; width: 100%; max-height: 420px; object-fit: cover; border-radius: 18px; margin: 8px 0 16px; }
+
+.recipe, .photos { background: var(--paper); border-radius: 18px; padding: 8px 20px 18px; }
+.recipe h2, .photos h2 { font: 700 20px/1.3 var(--text); margin: 18px 0 8px; padding-bottom: 4px; border-bottom: 2px solid var(--line); }
+.recipe ul, .recipe ol { padding-left: 22px; margin: 0 0 8px; }
+.recipe li { margin: 6px 0; }
+.recipe ol li { padding-left: 4px; }
+.recipe ol li::marker { font-weight: 700; }
+.recipe p { margin: 10px 0; }
+
+.photos { margin-top: 16px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin-bottom: 14px; }
+.gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; display: block; }
+.button { display: inline-block; background: var(--avocado); color: #fff3d9; font-weight: 700; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+.button:hover { filter: brightness(1.1); }
+.muted { color: var(--muted); }
+.small { font-size: 14px; margin: 8px 0 0; }
+
+.source { color: var(--muted); font-size: 14px; margin-top: 24px; word-break: break-word; }
+.source p { margin: 4px 0; }
+:focus-visible { outline: 3px solid var(--mustard); outline-offset: 2px; }

@@ -9,7 +9,7 @@ source_type: web                     # web | instagram | photo | book | family |
 source_name: Site or author name     # who it came from
 source_url: https://example.com/...  # leave out if there is no link
 originals: [original-1.jpg]          # screenshots, photos of the page or card, as saved
-image: dish.jpg                      # optional photo of the finished dish, shown at the top
+image: dish.jpg                      # optional: which photo to show at the top (otherwise the first photo in the folder)
 cooked: [2026-11-17]                 # add a date each time you cook it
 rating: 4                            # optional, 1–5
 ---

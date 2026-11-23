@@ -8,6 +8,10 @@ Recipes I have actually cooked, kept as plain text so they outlive any app.
 - **Only cooked recipes are kept.** A new recipe arrives as a pull request; merging it means "I cooked this". Add a date to `cooked:` and a line under **My notes** each time you make it again.
 - **Search:** the website (GitHub Pages) has full-text search and tag filters and works on a phone. Search links can be bookmarked, e.g. `?tag=vegetarian&q=lentil`.
 
+## Adding photos
+
+Every recipe page has an **Add photos** button. It opens GitHub's upload page for that recipe's folder: pick photos from your phone or computer and press "Commit changes". Any photo in the folder shows up in the recipe's gallery, and the first one is used as the main picture (set `image:` to choose a different one). Files listed under `originals:` (source screenshots) are linked rather than shown.
+
 ## Adding a recipe
 
 Send Claude an Instagram link, a web page, or a photo of a book page or recipe card. Claude will:

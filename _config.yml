@@ -14,3 +14,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+
+# Used for the "Add photos" button on each recipe page.
+repository: jdankiewicz/recipes
+branch: main
