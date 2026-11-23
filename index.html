@@ -10,7 +10,13 @@ layout: default
 </header>
 <div class="stripes" aria-hidden="true"></div>
 <main class="page">
-  <div id="tags" class="pills" aria-label="Filter by tag"></div>
+  <div class="filters">
+    <label class="filter-select">
+      <span class="sr-only">Filter by tag</span>
+      <select id="tagpick" aria-label="Filter by tag"><option value="">Filter by tag</option></select>
+    </label>
+    <div id="active" class="active-tags" aria-live="polite"></div>
+  </div>
   <p id="count" class="count"></p>
   <ul id="results" class="results"></ul>
   <noscript>

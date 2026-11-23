@@ -83,3 +83,16 @@ a { color: var(--link); }
 .source { color: var(--muted); font-size: 14px; margin-top: 24px; word-break: break-word; }
 .source p { margin: 4px 0; }
 :focus-visible { outline: 3px solid var(--mustard); outline-offset: 2px; }
+
+/* Tag filter: one dropdown, chosen tags shown as removable chips */
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 12px; }
+.filter-select { position: relative; display: inline-block; }
+.filter-select::after { content: "▾"; position: absolute; right: 14px; top: 50%; transform: translateY(-52%); color: var(--brown); pointer-events: none; font-size: 14px; }
+#tagpick { appearance: none; -webkit-appearance: none; font: 700 15px var(--text); color: var(--brown); background: var(--cream);
+  border: 2px solid var(--brown); border-radius: 999px; padding: 7px 36px 7px 16px; cursor: pointer; max-width: 100%; }
+@media (prefers-color-scheme: dark) { #tagpick { color: #f0c79a; border-color: #b0603a; } .filter-select::after { color: #f0c79a; } }
+.active-tags { display: contents; }
+.chip { font: 700 14px var(--text); padding: 6px 12px; border-radius: 999px; border: 0; background: var(--avocado); color: #fff3d9; cursor: pointer; }
+.chip span { margin-left: 4px; opacity: .85; }
+.clear { font: 14px var(--text); background: none; border: 0; color: var(--link); text-decoration: underline; cursor: pointer; padding: 6px 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
