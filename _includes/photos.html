@@ -1,0 +1,9 @@
+{%- comment -%} All images saved in this recipe's folder, except the ones listed as originals. {%- endcomment -%}
+{%- assign exts = ".jpg,.jpeg,.png,.webp,.gif,.heic,.JPG,.JPEG,.PNG,.WEBP,.HEIC" | split: "," -%}
+{%- assign photos = "" | split: "" -%}
+{%- for f in site.static_files -%}
+  {%- assign fdir = f.path | split: "/" | pop | join: "/" | append: "/" -%}
+  {%- if fdir == include.dir and exts contains f.extname -%}
+    {%- unless include.originals contains f.name -%}{%- assign photos = photos | push: f -%}{%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
