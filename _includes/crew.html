@@ -1,13 +1,23 @@
 {%- comment -%}
-  Round screen-printed family photo in the header. `pick` chooses one; otherwise it matches the recipe's tags.
+  Round screen-printed family photo in the header. `pick` chooses one; otherwise it matches the recipe's tags,
+  and recipes with no matching tag get one picked from their title, so they don't all look the same.
 {%- endcomment -%}
 {%- assign crew = include.pick -%}
 {%- unless crew -%}
   {%- assign t = include.tags | join: " " | prepend: " " | append: " " -%}
-  {%- if t contains " baking " or t contains " dessert " or t contains " cake " or t contains " bread " -%}{%- assign crew = "buns" -%}
+  {%- if t contains " christmas " or t contains " gingerbread " or t contains " cookies " or t contains " swedish " -%}{%- assign crew = "gingerbread" -%}
+  {%- elsif t contains " baking " or t contains " dessert " or t contains " cake " or t contains " bread " -%}{%- assign crew = "buns" -%}
+  {%- elsif t contains " vietnamese " or t contains " thai " or t contains " asian " -%}{%- assign crew = "class-plate" -%}
+  {%- elsif t contains " noodles " or t contains " soup " or t contains " curry " -%}{%- assign crew = "class-pho" -%}
+  {%- elsif t contains " lemon " or t contains " citrus " or t contains " lime " or t contains " drinks " or t contains " cocktail " -%}{%- assign crew = "lemon" -%}
+  {%- elsif t contains " potatoes " or t contains " potato " or t contains " kids " -%}{%- assign crew = "potatoes" -%}
   {%- elsif t contains " sandwich " or t contains " burger " or t contains " lunch " -%}{%- assign crew = "burger" -%}
-  {%- elsif t contains " pasta " or t contains " italian " or t contains " noodles " -%}{%- assign crew = "spaghetti" -%}
+  {%- elsif t contains " pasta " or t contains " italian " -%}{%- assign crew = "spaghetti" -%}
   {%- elsif t contains " vegetarian " or t contains " vegan " or t contains " side " -%}{%- assign crew = "shades" -%}
-  {%- else -%}{%- assign crew = "spaghetti" -%}{%- endif -%}
+  {%- else -%}
+    {%- assign all = site.data.crew | default: "buns,burger,spaghetti,shades,class-pho,class-plate,potatoes,gingerbread,lemon" | split: "," -%}
+    {%- assign i = include.title | size | modulo: all.size -%}
+    {%- assign crew = all[i] -%}
+  {%- endif -%}
 {%- endunless -%}
 <img class="crew" id="crew" src="{{ '/assets/crew/' | append: crew | append: '.png' | relative_url }}" alt="" width="180" height="180">

@@ -6,7 +6,7 @@ layout: default
 {%- if hero == nil and photos.size > 0 -%}{%- assign hero = photos.first.name -%}{%- endif -%}
 <header class="band with-crew">
   <div class="band-inner">
-    {% include crew.html tags=page.tags %}
+    {% include crew.html tags=page.tags title=page.title %}
     <a class="back" href="{{ '/' | relative_url }}">← {{ site.title }}</a>
     <h1 class="display">{{ page.title }}</h1>
   </div>
