@@ -1,6 +1,6 @@
 # Recipe repo: instructions for Claude
 
-This repo stores recipes the owner has actually cooked. Each recipe is `recipes/<slug>/index.md` (front matter + Markdown) with its images in the same folder. `templates/recipe.md` is the canonical format. The site is Jekyll on GitHub Pages; `index.html` + `assets/search.js` do search over `search.json`.
+This repo stores the owner's recipes. Whether one has been cooked is tracked by its `cooked:` dates. Each recipe is `recipes/<slug>/index.md` (front matter + Markdown) with its images in the same folder. `templates/recipe.md` is the canonical format. The site is Jekyll, built and hosted by Netlify (https://cookrecept.netlify.app) on every push to `main`; `index.html` + `assets/search.js` do search over `search.json`.
 
 ## Ingesting a recipe (link, Instagram post, screenshot, photo, web page)
 
@@ -17,7 +17,7 @@ This repo stores recipes the owner has actually cooked. Each recipe is `recipes/
 5. **Tags:** lower case, reuse existing tags (check other recipes first). Cover course, cuisine, main ingredient, diet.
 6. **Slug:** short, lower case, hyphens: `recipes/chicken-katsu-curry/`.
 7. Leave `cooked: []` and `## My notes` empty unless the owner gave a date or comment.
-8. **Open a pull request** titled `Add <title>` on a branch `recipe/<slug>`, listing any conversions that were guesses. Merging = the owner has cooked it. Never push recipes straight to `main`.
+8. **Commit straight to `main` and push**, with the message `Add <title>`, so the recipe is live on the site within a minute. No branch, no pull request. In your reply, give the live link (`https://cookrecept.netlify.app/recipes/<slug>/`) and list any conversions that were guesses.
 
 ## Updating
 

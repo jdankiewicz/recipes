@@ -5,7 +5,7 @@ Recipes I have actually cooked, kept as plain text so they outlive any app.
 - **One folder per recipe:** `recipes/<short-name>/index.md`, with the original screenshots or photos and any dish photo saved next to it.
 - **Plain Markdown with a small header** (title, tags, servings, source, dates cooked, rating). It opens in any text editor, and GitHub shows it nicely too.
 - **Everything is metric:** grams, millilitres, °C, centimetres. Small spoon measures keep the spoon in brackets, e.g. `15 ml (1 tbsp)`.
-- **Only cooked recipes are kept.** A new recipe arrives as a pull request; merging it means "I cooked this". Add a date to `cooked:` and a line under **My notes** each time you make it again.
+- **Cooked dates:** a new recipe goes live straight away with `cooked: []`. Add a date to `cooked:` and a line under **My notes** each time you make it.
 - **Search:** the website (GitHub Pages) has full-text search and tag filters and works on a phone. Search links can be bookmarked, e.g. `?tag=vegetarian&q=lentil`.
 
 ## Adding photos
@@ -18,7 +18,7 @@ Send Claude an Instagram link, a web page, or a photo of a book page or recipe c
 
 1. Extract the recipe, rewrite it in the house format, and convert every quantity to metric.
 2. Keep the source link and save the original screenshot or photo in the recipe's folder.
-3. Open a pull request. After you cook it, add your notes and merge.
+3. Commit it straight to `main`. The site updates within a minute.
 
 Or by hand: copy `templates/recipe.md` to `recipes/<short-name>/index.md` and fill it in.
 
