@@ -7,9 +7,10 @@ This repo stores the owner's recipes. Whether one has been cooked is tracked by 
 1. **Extract** title, servings, times, ingredients and method. For Instagram, use the caption, and any recipe text in the images; if the recipe is only in a video, say what is missing rather than guessing.
 2. **Save the originals** in the recipe folder: the screenshot or photo as received, named `original-1.jpg`, `original-2.jpg`…, and list them under `originals:`. For a web page, keep `source_url`; also save a screenshot if the page might disappear.
 3. **Convert to metric**, always:
-   - Weights in g / kg. Convert cups of dry ingredients by ingredient density (e.g. 1 cup flour ≈ 125 g, sugar ≈ 200 g, butter ≈ 225 g, rice ≈ 185 g); state grams, not cups.
+   - **Prefer weight.** The owner weighs rather than measures by volume. Anything that can sensibly be weighed (flour, sugar, rice, oats, butter, nuts, grated cheese, chopped herbs, ginger, honey, miso…) gets grams first, even when the source gives cups, dl or spoons. Keep the volume in brackets when it helps: `250 g (4 dl) plain flour`, `185 g (1 cup) rice`.
+   - Convert volumes of dry ingredients by density (e.g. 1 cup / 2.4 dl flour ≈ 125 g, sugar ≈ 200 g, butter ≈ 225 g, rice ≈ 185 g; 1 dl flour ≈ 60 g, sugar ≈ 85 g, rice ≈ 80 g). Never leave a weighable ingredient in cups or dl only.
    - Liquids in ml / l (1 cup = 240 ml, 1 fl oz = 30 ml).
-   - Spoons: write ml with the spoon kept in brackets: `15 ml (1 tbsp)`, `5 ml (1 tsp)`. For dry spice amounts, grams with the spoon in brackets is fine: `5 g (2 tsp) paprika`.
+   - Spoons: liquids as ml with the spoon in brackets: `15 ml (1 tbsp)`, `5 ml (1 tsp)`. Dry ingredients and pastes as grams with the spoon in brackets: `5 g (2 tsp) paprika`, `20 g (1 tbsp) honey`. Below about 1 g (a pinch, ¼ tsp cayenne) the spoon alone is fine.
    - Temperatures in °C, with fan in brackets: `200 °C (180 °C fan)`. Gas marks too, if the source used them.
    - Lengths/pan sizes in cm. Ounces/pounds to grams. Round sensibly (to 5 g / 5 ml above 20).
    - Countable items stay countable, with a weight where it helps: `1 onion (about 150 g)`.

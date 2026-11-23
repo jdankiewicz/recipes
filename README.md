@@ -4,7 +4,7 @@ Recipes I have actually cooked, kept as plain text so they outlive any app.
 
 - **One folder per recipe:** `recipes/<short-name>/index.md`, with the original screenshots or photos and any dish photo saved next to it.
 - **Plain Markdown with a small header** (title, tags, servings, source, dates cooked, rating). It opens in any text editor, and GitHub shows it nicely too.
-- **Everything is metric:** grams, millilitres, °C, centimetres. Small spoon measures keep the spoon in brackets, e.g. `15 ml (1 tbsp)`.
+- **Everything is metric, by weight where possible:** grams first for anything you can weigh (flour, sugar, rice, butter…), with the volume in brackets, e.g. `250 g (4 dl) flour`. Liquids in ml, °C, centimetres; small spoon measures keep the spoon in brackets, e.g. `15 ml (1 tbsp)`.
 - **Cooked dates:** a new recipe goes live straight away with `cooked: []`. Add a date to `cooked:` and a line under **My notes** each time you make it.
 - **Search:** the website (GitHub Pages) has full-text search and tag filters and works on a phone. Search links can be bookmarked, e.g. `?tag=vegetarian&q=lentil`.
 

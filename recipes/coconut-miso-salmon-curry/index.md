@@ -17,7 +17,7 @@ A light weeknight curry. The miso is fried with the aromatics so it caramelises,
 
 - 30 ml (2 tbsp) rapeseed oil
 - 1 medium red onion (about 170 g), halved and sliced 1 cm thick
-- 3 cm piece fresh ginger, minced (about 30 ml / 2 tbsp)
+- 15 g (3 cm piece) fresh ginger, minced
 - 3 cloves garlic, thinly sliced
 - Salt and black pepper
 - 70 g white miso

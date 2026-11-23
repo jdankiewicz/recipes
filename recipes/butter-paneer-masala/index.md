@@ -96,7 +96,7 @@ Hob settings are for a 1–9 scale with a 24 cm Le Creuset pot.
 
 **Basmati rice**
 
-1. Rinse 600 ml (about 460 g) basmati 2–3 times.
+1. Rinse 460 g (600 ml) basmati 2–3 times.
 2. Fill water to the white-rice line or just under. On the Zojirushi the white-rice program takes about 50 minutes, so start it about an hour before serving, or use TIMER to set the ready time.
 
 **Paratha**
