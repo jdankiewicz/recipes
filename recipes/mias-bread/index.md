@@ -1,34 +1,34 @@
 ---
-title: Mia's bread (Det fantastiska brödet)
+title: Det fantastiska brödet (Mias bröd)
 tags: [bread, baking, swedish, vegan, vegetarian, oven]
 servings: 8
 prep_minutes: 10
 cook_minutes: 45
 source_type: family
-source_name: Mia, handwritten note (Evernote snapshot, 18 Jan 2013)
+source_name: Mia, handskriven lapp (Evernote-bild, 18 jan 2013)
 originals: [original-1.png]
 cooked: []
 ---
 
-A no-knead loaf baked in a cast-iron pot. Makes one loaf. Mix it the evening before: the dough rests 12–18 hours at room temperature.
+Ett bröd utan knådning, bakat i järngryta. Ger en limpa. Blanda degen kvällen innan: den ska vila 12–18 timmar i rumstemperatur.
 
 ## Ingredients
 
-- 420 g (7 dl) wheat flour
-- 1.5 g (½ tsp) dried yeast
-- 10 g (1¾ tsp) salt
-- 350 ml water
+- 420 g (7 dl) vetemjöl
+- 1,5 g (½ tsk) torrjäst
+- 10 g (1¾ tsk) salt
+- 350 ml vatten
 
 ## Method
 
-1. Mix the dry ingredients, then pour in the water. Stir to a sticky dough.
-2. Cover the bowl with cling film and leave at room temperature for 12–18 hours.
-3. Next day, heat the oven to 230 °C (210 °C fan) with a cast-iron pot, or another ovenproof pot with a lid, inside. Preheat the pot for 30 minutes.
-4. Meanwhile, tip the dough out onto a floured surface.
-5. Put the dough in the hot pot, put the lid on and bake for 30 minutes.
-6. Take off the lid and bake for another 15 minutes.
-7. Take the bread out of the pot and cool it uncovered, without a cloth.
+1. Blanda alla torra ingredienser och häll sedan i vattnet. Rör till en kladdig deg.
+2. Täck skålen med plast och låt vila i rumstemperatur i 12–18 timmar.
+3. Nästa dag: sätt ugnen på 230 °C (210 °C varmluft) med en järngryta, eller annan ugnsfast gryta med lock, inne i ugnen. Förvärm grytan i 30 minuter.
+4. Lägg under tiden ut degen på en mjölad bänk.
+5. Lägg degen i den varma grytan, sätt på locket och baka i 30 minuter.
+6. Ta av locket och baka ytterligare 15 minuter.
+7. Ta ut brödet ur grytan och låt det svalna utan duk.
 
-**Variations:** try other flours, or add rosemary, grated cheese, cranberries, lemon zest or nuts.
+**Varianter:** prova olika sorters mjöl, eller tillsätt rosmarin, riven ost, tranbär, citronskal, nötter eller vad som helst.
 
 ## My notes

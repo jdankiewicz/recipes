@@ -14,7 +14,7 @@ This repo stores the owner's recipes. Whether one has been cooked is tracked by 
    - Temperatures in °C, with fan in brackets: `200 °C (180 °C fan)`. Gas marks too, if the source used them.
    - Lengths/pan sizes in cm. Ounces/pounds to grams. Round sensibly (to 5 g / 5 ml above 20).
    - Countable items stay countable, with a weight where it helps: `1 onion (about 150 g)`.
-4. **Adapt the text** to the house format: imperative steps, numbered, no story. Keep the author's credit in `source_name`.
+4. **Adapt the text** to the house format: imperative steps, numbered, no story. Keep the author's credit in `source_name`. Write in English, except that a Swedish recipe may stay in Swedish (title, intro, ingredients, method); keep the section headings, front-matter keys and tags in English.
 5. **Tags:** lower case, reuse existing tags (check other recipes first). Cover course, cuisine, main ingredient, diet.
 6. **Slug:** short, lower case, hyphens: `recipes/chicken-katsu-curry/`.
 7. Leave `cooked: []` and `## My notes` empty unless the owner gave a date or comment.
